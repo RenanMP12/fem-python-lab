@@ -107,7 +107,7 @@ Distribuído sob a licença **MIT**. Veja o arquivo `LICENSE` para mais detalhes
 
 ## 📬 Contato
 
-**Renan M. P.**, Mestre em Engenharia Mecânica (Unicamp)
+**Renan M. P.**, Doutor em Engenharia Mecânica (University of Waterloo, Canadá)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/SEU-PERFIL)
 [![Email](https://img.shields.io/badge/E--mail-D14836?logo=gmail&logoColor=white)](mailto:SEU-EMAIL@exemplo.com)
