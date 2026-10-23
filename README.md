@@ -7,11 +7,10 @@
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-11557c)
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-orange)
 
-[Sobre](#-sobre) · [Conteúdo](#-conteúdo) · [Exemplos](#-exemplos-de-resultados) · [Como executar](#-como-executar) · [Contato](#-contato)
+[Sobre](#-sobre) · [Conteúdo](#-conteúdo) · [Como executar](#-como-executar) · [Contato](#-contato)
 
 </div>
 
@@ -19,33 +18,29 @@
 
 ## 📌 Sobre
 
-Este repositório reúne códigos em Python que desenvolvi durante meus estudos e pesquisa em **Engenharia Mecânica**, com ênfase em **Mecânica dos Sólidos e Projeto Mecânico** (mestrado na Unicamp).
+Este repositório reúne códigos em Python desenvolvidos durante meus estudos e pesquisa em **Engenharia Mecânica**, com ênfase em **Mecânica dos Sólidos e Projeto Mecânico** (mestrado na Unicamp).
 
-A ideia é que sirva como material de **consulta e aprendizado**: cada código é organizado, comentado e, sempre que possível, acompanhado de gráficos e exemplos de uso. Se você é estudante, pesquisador ou entusiasta de simulação e métodos numéricos, fique à vontade para explorar, usar e sugerir melhorias.
-
-> 💡 **Dica:** se for sua primeira visita, comece pela pasta [`notebooks/`](notebooks/), que tem explicações passo a passo.
+Os scripts cobrem **elementos finitos** (treliças e vigas), **métodos de resíduos ponderados** (colocação e Galerkin) e problemas clássicos de **estabilidade e vibrações** de estruturas. A ideia é que sirva como material de **consulta e aprendizado** para estudantes e entusiastas de simulação numérica.
 
 ## 📂 Conteúdo
 
-| Pasta | O que você encontra |
+### 🔩 Elementos Finitos
+
+| Arquivo | Descrição |
 |---|---|
-| [`metodos_numericos/`](metodos_numericos/) | Raízes de equações (bisseção, Newton-Raphson), integração e derivação numérica, EDOs |
-| [`elementos_finitos/`](elementos_finitos/) | Elementos de barra, treliça e viga; montagem da matriz de rigidez e solução de sistemas |
-| [`mecanica_dos_solidos/`](mecanica_dos_solidos/) | Tensões, deformações, círculo de Mohr, critérios de falha |
-| [`analise_de_dados/`](analise_de_dados/) | Tratamento de dados experimentais e gráficos com pandas e matplotlib |
-| [`notebooks/`](notebooks/) | Jupyter Notebooks com teoria, código e resultados |
-| [`imagens/`](imagens/) | Figuras usadas neste README |
+| [`Truss_2D.py`](Truss_2D.py) | Análise de treliças planas (2D) pelo Método dos Elementos Finitos |
+| [`2D Euler Beam Quadratic Load.py`](<2D Euler Beam Quadratic Load.py>) | Viga de Euler-Bernoulli 2D submetida a carregamento quadrático |
+| [`euler_critical_load.py`](euler_critical_load.py) | Cálculo da carga crítica de flambagem de Euler |
+| [`modes_vibration_beam.py`](modes_vibration_beam.py) | Modos e frequências naturais de vibração de uma viga |
+| [`Circular geometry.py`](<Circular geometry.py>) | Cálculos e visualização de geometria circular |
+| [`pluviometer.py`](pluviometer.py) | Análise de dados de pluviômetro |
 
-> ✏️ *Ajuste a tabela acima para refletir as pastas e arquivos reais do repositório.*
+### 📐 Métodos de resíduos ponderados
 
-## 🖼️ Exemplos de resultados
-
-<!-- Substitua pelas suas imagens. Salve-as na pasta imagens/ -->
-
-| Deformada de uma treliça | Convergência do método de Newton |
-|:---:|:---:|
-| ![Treliça](imagens/trelica.png) | ![Convergência](imagens/convergencia.png) |
-| *Estrutura original e deformada (fator de escala ampliado)* | *Erro por iteração em escala logarítmica* |
+| Arquivo | Descrição |
+|---|---|
+| [`collocation_method.py`](collocation_method.py) | Solução aproximada pelo método da colocação |
+| [`galerkin_method.py`](galerkin_method.py) | Solução aproximada pelo método de Galerkin |
 
 ## 🚀 Como executar
 
@@ -67,58 +62,28 @@ venv\Scripts\activate         # Windows
 **3. Instale as dependências**
 
 ```bash
-pip install -r requirements.txt
+pip install numpy scipy matplotlib sympy
 ```
 
 **4. Execute um exemplo**
 
 ```bash
-python elementos_finitos/trelica.py
+python Truss_2D.py
 ```
-
-**Ou abra os notebooks:**
-
-```bash
-jupyter notebook notebooks/
-```
-
-### ☁️ Sem instalar nada
-
-Os notebooks podem ser abertos no Google Colab:
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/RenanMP12/fem-python-lab/blob/main/notebooks/exemplo.ipynb)
-
-> ✏️ *Troque `exemplo.ipynb` pelo nome de um notebook real.*
 
 ## 🛠️ Tecnologias
 
 - **Python 3.10+**
-- **NumPy** e **SciPy** — álgebra linear e cálculo numérico
-- **Matplotlib** — visualização dos resultados
-- **Pandas** — análise de dados
-- **Jupyter** — documentação interativa
-
-## 🗂️ Estrutura do projeto
-
-```
-fem-python-lab/
-├── README.md
-├── LICENSE
-├── requirements.txt
-├── imagens/
-├── metodos_numericos/
-├── elementos_finitos/
-├── mecanica_dos_solidos/
-├── analise_de_dados/
-└── notebooks/
-```
+- **NumPy** e **SciPy**: álgebra linear e cálculo numérico
+- **SymPy**: cálculo simbólico (métodos de resíduos ponderados)
+- **Matplotlib**: visualização dos resultados
 
 ## 🗺️ Próximos passos
 
-- [ ] Adicionar elementos finitos 2D (triangular e quadrilateral)
-- [ ] Criar animações das deformadas
-- [ ] Incluir testes automatizados
-- [ ] Traduzir a documentação para o inglês
+- [ ] Organizar os scripts em pastas por tema
+- [ ] Adicionar imagens dos resultados ao README
+- [ ] Criar notebooks Jupyter com a teoria de cada método
+- [ ] Incluir elementos finitos 2D (triangular e quadrilateral)
 
 ## 🤝 Como contribuir
 
@@ -134,15 +99,15 @@ Encontrou um erro ou tem uma sugestão? Abra uma [issue](../../issues).
 
 ## 🔗 Projetos relacionados
 
-- [Finite-Element-Codes](https://github.com/RenanMP12/Finite-Element-Codes) — códigos de elementos finitos em Matlab
+- [Finite-Element-Codes](https://github.com/RenanMP12/Finite-Element-Codes): códigos de elementos finitos em Matlab
 
 ## 📜 Licença
 
-Distribuído sob a licença **MIT**. Veja o arquivo [`LICENSE`](LICENSE) para mais detalhes.
+Distribuído sob a licença **MIT**. Veja o arquivo `LICENSE` para mais detalhes.
 
 ## 📬 Contato
 
-**Renan M. P.** — Mestre em Engenharia Mecânica (Unicamp)
+**Renan M. P.**, Mestre em Engenharia Mecânica (Unicamp)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/SEU-PERFIL)
 [![Email](https://img.shields.io/badge/E--mail-D14836?logo=gmail&logoColor=white)](mailto:SEU-EMAIL@exemplo.com)
